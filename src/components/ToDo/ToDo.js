@@ -17,19 +17,23 @@ class ToDo extends Component {
             ],
             type: 1 // 1-all, 2-done, 3-not done
         }
+        this.addItem = this.addItem.bind(this);
+        this.updateItem = this.updateItem.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
+        this.changeType = this.changeType.bind(this);
     }
 
     render() {
         return (
-            <div>
-                <TodoHD addTodo={this.addItem.bind(this)} />
+            <div className="todo">
+                <TodoHD addTodo={this.addItem} />
                 <TodoBD todoList={this.state.todos}
-                    updateItem={this.updateItem.bind(this)}
-                    deleteItem={this.deleteItem.bind(this)}
+                    updateItem={this.updateItem}
+                    deleteItem={this.deleteItem}
                     showType={this.state.type}
                 />
                 <TodoFT todoList={this.state.todos}
-                    changeType={this.changeType.bind(this)}
+                    changeType={this.changeType}
                     type={this.state.type}
                 />
             </div>

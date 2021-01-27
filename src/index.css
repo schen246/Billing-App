@@ -2,6 +2,11 @@
 @import './styles/TopNavBar.css';
 @import './styles/Main.css';
 @import './styles/BottomNavBar.css';
+@import './styles/ToDo.css';
+@import './styles/TodoHD.css';
+@import './styles/TodoBD.css';
+@import './styles/TodoItem.css';
+@import './styles/TodoFT.css';
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

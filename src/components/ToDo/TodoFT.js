@@ -11,7 +11,7 @@ class TodoFT extends Component {
         const doneLen = list.filter(item => item.done).length;
         const notDoneLen = list.filter(item => !item.done).length;
         return (
-            <div>
+            <div className="FT">
                 <button
                     onClick={() => {this.props.changeType(1)}}
                     className={this.props.type === 1 ? 'active' : null}

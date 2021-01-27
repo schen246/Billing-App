@@ -7,15 +7,19 @@ class TodoHD extends Component {
 
     render() {
         return (
-            <div>
-                <input type="text" ref="newItem" onKeyDown={e => {
+            <div className="HD">
+                <form id="to-do-form" onSubmit={this.props.addItem}>
+                    <input type="text" placeholder="Enter task" value= {''} onChange={e => e.target.value}></input>
+                    <button type="submit">Add</button>
+                </form>
+                {/* <input type="text" ref="newItem" onKeyDown={e => {
                     if (e.key === 'Enter') {
                         this.add(this.refs.newItem.value)
                     }
                 }}/>
                 <button onClick={
                     () => this.add(this.refs.newItem.value)
-                }>Add</button>
+                }>Add</button> */}
             </div>
         );
     }

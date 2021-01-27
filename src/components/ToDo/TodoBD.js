@@ -8,7 +8,7 @@ class TodoBD extends Component {
 
     render() {
         return (
-            <div>
+            <div className="BD">
                 {
                     this.props.todoList.filter(item => {
                         const type = this.props.showType;
