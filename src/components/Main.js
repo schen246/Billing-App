@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import ToDo from "./ToDo/ToDo";
+import Billing from "./Billing/Billing";
 
 class Main extends Component {
     render() {
         return(
             <div className="main">
-                <ToDo />
+                <Billing />
             </div>
         );
     }

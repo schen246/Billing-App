@@ -6,7 +6,7 @@ class TopNacBar extends Component {
         return (
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
-                <h1 className="App-header-h1">Daily Tasks</h1>
+                <h1 className="App-header-h1">Billing Management</h1>
             </header>
         );
     }
