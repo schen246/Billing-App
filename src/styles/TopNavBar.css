@@ -15,5 +15,7 @@
 }
 
 .App-header-h1 {
+    color: white;
     padding-left: 40px;
+    padding-top: 10px;
 }

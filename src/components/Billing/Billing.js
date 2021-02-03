@@ -12,16 +12,22 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 
 import {StyledTableCell, StyledTableRow, useStyles} from "./Constants";
+import { API_ROOT, TOKEN_KEY } from '../../constants';
 
 export default function Billing(props) {
     const classes = useStyles();
     const [renderIdList, setRenderIdList] = useState('');
     const [loading, setLoading] = useState(false);
+    const userId = localStorage.getItem(TOKEN_KEY);
 
     function getBillingData(userId) {
         setLoading(true);
-        axios.post(`http://localhost:8000/getBillingData/`)
+        console.log(userId);
+        axios.post(`${API_ROOT}/getbillingdata`, {
+            user_id: userId
+        })
         .then((response) => {
+            console.log(response.data);
             processData(response.data);
             setLoading(false);
         })
@@ -35,21 +41,21 @@ export default function Billing(props) {
         let list = [];
         if (rows !== undefined && rows.length > 0) {
             list = rows.map((row, index) => {
-                return {srNo: index + 1, transactionID: row.transactionID, date: row.date, status: row.status, amountPaid: row.amountPaid, reports: "Download"}
+                return {srNo: index + 1, transactionID: row.transaction_id, date: row.date, status: row.status, amountPaid: row.amount, reports: "Download"}
             });
         }
         setRenderIdList(list);
     }
 
     useEffect(() => {
-        getBillingData(props.login.userId);
-    });
+        getBillingData(userId);
+    }, []);
 
     return (
         <React.Fragment>
         <CssBaseline/>
         <main className={classes.mainMargin}>
-        <label style={{fontSize: "2rem"}}>Billing Status</label>
+        <label style={{fontSize: "2rem"}}>Billing Reports</label>
             <form className={classes.form}>
                 <TableContainer component={Paper}>
                     <Table className={classes.table} aria-label="customized table">
